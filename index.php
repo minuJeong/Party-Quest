@@ -1,15 +1,10 @@
 <html>
 	<head>
-		<title> php test </title>
+		<title>PHP Å×½ºÆ®</title>
 	</head>
 	<body>
-
 		<?php
-		echo '
-		<p>
-			hello world
-		</p>';
+		echo $_SERVER['HTTP_USER_AGENT'];
 		?>
-
 	</body>
 </html>
