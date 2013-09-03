@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>PHP �׽�Ʈ</title>
+		<title>PHP �׽�Ʈ</title>
 	</head>
 	<body>
 		fdsafdsa1111
@@ -9,7 +9,7 @@
 		dsaf1111
 		
 		<?php
-		
+		   echo 'from ipad...'
 		?>
 	</body>
 </html>
