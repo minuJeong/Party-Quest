@@ -5,7 +5,7 @@
 	<body>
 		fdsafdsa
 		<?php
-		phpinfo();
+		
 		?>
 	</body>
 </html>
