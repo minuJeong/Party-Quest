@@ -38,7 +38,7 @@
 
 		?>
 
-		<title>PHP �׽�Ʈ</title>
+		<title>PHP</title>
 	</head>
 	<body>
 		fdsafdsa1111
