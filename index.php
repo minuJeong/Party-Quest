@@ -1,6 +1,5 @@
 <html>
 	<head>
-		<title>PHP Å×½ºÆ®</title>
 
 		<?php
 
