@@ -1,7 +1,7 @@
 <?php
 Class TestClass {
 public function testMethod() {
-$result='fdasfdas';
+$result='fdasfd1111111as';
 return $result;
 }
 }
