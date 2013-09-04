@@ -1,9 +1,8 @@
 <?php
 Class TestClass {
 public function testMethod() {
-$date=new DateTime();
-$result=$date->getTimeStamp();
-$result=substr(strlen($result),0,1);
+mysqli_query("USE LocationData");
+$result=mysqli_query("SELECT * FROM locationtable");
 return $result;
 }
 }
