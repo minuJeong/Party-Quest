@@ -17,5 +17,7 @@
 
 		?>
 
+		<img src="/res/sample.jpg" />
+
 	</body>
 </html>
