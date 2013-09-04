@@ -24,8 +24,4 @@ $gateway=Amfphp_Core_HttpRequestGatewayFactory::createGateway();
 //chdir(dirname(__FILE__) . '/Services');
 $gateway->service();
 $gateway->output();
-
-$res=mysqli_query("USE LocationData
-              SELECT name FROM locationtable WHERE id LIKE 0");
-return $res;
 ?>
