@@ -3,6 +3,9 @@
 		<title>PHP</title>
 	</head>
 	<body>
+		
+		php test.
+		
 		<?php
 
 		$db_host = "54.250.220.66"
