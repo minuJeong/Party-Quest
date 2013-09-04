@@ -1,10 +1,21 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>PHP</title>
-	</head>
 	<body>
-		
+
 		php test.
-		
+
+		<?php
+
+		function echo_number ($n)
+		{
+		echo ++$n;
+		}
+
+		for ($i = 0; $i <= 30; $i++) {
+		echo_number($i);
+		}
+
+		?>
+
 	</body>
 </html>
