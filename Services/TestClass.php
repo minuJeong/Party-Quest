@@ -1,7 +1,8 @@
 <?php
 Class TestClass {
 public function testMethod() {
-return DateTime::getTimeStamp();
+$date=new DateTime();
+return $date->getTimeStamp();
 }
 }
 ?>
