@@ -1,5 +1,6 @@
 <html>
 	<head>
+<<<<<<< HEAD
 		<title>PHP �׽�Ʈ</title>
 
 		<?php
@@ -38,11 +39,21 @@
 
 		?>
 
+=======
+		<title>PHP �׽�Ʈ</title>
+>>>>>>> b54c341f69ee7edc75b19e5317d4882c4e2226bc
 	</head>
 	<body>
 		fdsafdsa1111
 		fdsaf1111
 		fdsa1111
 		dsaf1111
+<<<<<<< HEAD
+=======
+		
+		<?php
+		   echo 'from ipad...'
+		?>
+>>>>>>> b54c341f69ee7edc75b19e5317d4882c4e2226bc
 	</body>
 </html>
