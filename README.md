@@ -1,5 +1,4 @@
-party quest
-legendary hero.
+party quest::legendary hero.
 ==========
 
 amf-php
