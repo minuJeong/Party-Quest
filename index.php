@@ -1,6 +1,8 @@
 <html>
 	<head>
-
+		<title>PHP</title>
+	</head>
+	<body>
 		<?php
 
 		$db_host = "54.250.220.66"
@@ -36,13 +38,5 @@
 		}
 
 		?>
-
-		<title>PHP</title>
-	</head>
-	<body>
-		fdsafdsa1111
-		fdsaf1111
-		fdsa1111
-		dsaf1111
 	</body>
 </html>
