@@ -1,19 +1,23 @@
 <?php
-Class TestClass {
-	public function testMethod($param) {
+Class SQLLink {
 
-		$HOST = "localhost";
-		$DBNAME = "LocationData";
-		$DBUSER = "root";
-		$DBPASS = "A8057silent";
+	private static $HOST = "localhost";
+	private static $DBUSER = "root";
+	private static $DBPASS = "A8057silent";
+
+	private $DBNAME = "LocationData";
+
+	public function SQLLink() {
+
+	}
+
+	public function getResult($param) {
 
 		$conn = mysqli_connect($HOST, $DBUSER, $DBPASS, $DBNAME);
 
 		$QUERY = "SELECT * FROM locationtable";
 
 		$result = mysqli_query($QUERY);
-
-		$result = $result . $param;
 		return $result;
 	}
 
