@@ -24,7 +24,7 @@ $queryResult = mysqli_query($conn, $que);
 $len = mysqli_affected_rows($conn);
 for ($i = 0; $i < $len; $i++) {
 	mysqli_data_seek($queryResult, $i);
-	$row = mysqli_fetch_row($queryResult);
+	$row = mysqli_fetch_array($queryResult);
 	echo $row['name'] . '
 	';
 }
