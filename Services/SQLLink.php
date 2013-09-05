@@ -1,4 +1,7 @@
 <?php
+
+echo "test string";
+
 Class SQLLink {
 
 	private static $HOST = "127.0.0.1";
