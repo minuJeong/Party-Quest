@@ -21,10 +21,12 @@ if (mysqli_errno($conn)) {
 $que = "SELECT name FROM locationtable;";
 $queryResult = mysqli_query($conn, $que);
 
-echo $queryResult . '
-';
+mysqli_data_seek($queryResult, 0);
+$row = mysqli_fetch_row($queryResult);
 
-echo mysqli_data_seek($queryResult, 0) . '
+echo $row[0] . '
+';
+echo $row[1] . '
 ';
 
 echo '
