@@ -13,11 +13,16 @@ Class SQLLink {
 	public function getResult($param) {
 
 		$conn = mysqli_connect($HOST, $DBUSER, $DBPASS);
+
+		if (mysqli_connect_errno($conn)) {
+			return "Failed connection to mysql. error: " . mysqli_error();
+		}
+
 		mysqli_select_db($DBNAME);
 
 		$query = "SELECT * FROM locationtable;";
 		$result = mysqli_query($query);
-		
+
 		return $result . $param;
 	}
 
