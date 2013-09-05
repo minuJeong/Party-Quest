@@ -21,13 +21,13 @@ if (mysqli_errno($conn)) {
 $que = "SELECT name FROM locationtable;";
 $queryResult = mysqli_query($conn, $que);
 
-mysqli_data_seek($queryResult, 0);
-$row = mysqli_fetch_row($queryResult);
-
-echo $row[0] . '
+$len = mysqli_affected_rows();
+for ($i = 0; $i < $len; $i++) {
+	mysqli_data_seek($queryResult, 0);
+	$row = mysqli_fetch_row($queryResult);
+	echo $row[0] . '
 ';
-
-echo '311123';
+}
 
 echo '
 end point
