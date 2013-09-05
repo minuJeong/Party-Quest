@@ -23,10 +23,10 @@ $queryResult = mysqli_query($conn, $que);
 
 $len = mysqli_affected_rows($conn);
 for ($i = 0; $i < $len; $i++) {
-	mysqli_data_seek($queryResult, 0);
+	mysqli_data_seek($queryResult, $i);
 	$row = mysqli_fetch_row($queryResult);
 	echo $row[0] . '
-';
+	';
 }
 
 echo '
