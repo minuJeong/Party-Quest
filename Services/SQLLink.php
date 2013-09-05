@@ -20,11 +20,13 @@ Class SQLLink {
 
 		mysqli_select_db($DBNAME);
 
-		$query = "SELECT name FROM locationtable WHERE id LIKE ;";
+		$query = "SELECT name FROM locationtable;";
 		$dataset = mysqli_query($conn, $query);
 
 		$datalen = mysqli_affected_rows();
+
 		$result = "";
+
 		for ($i = 0; $i < $datalen; $i++) {
 			mysqli_data_seek($dataset, $i);
 			$location = mysqli_fetch_array($dataset);
