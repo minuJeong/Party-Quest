@@ -21,7 +21,7 @@ if (mysqli_errno($conn)) {
 $que = "SELECT name FROM locationtable;";
 $queryResult = mysqli_query($conn, $que);
 
-$len = mysqli_affected_rows();
+$len = mysqli_affected_rows($conn);
 for ($i = 0; $i < $len; $i++) {
 	mysqli_data_seek($queryResult, 0);
 	$row = mysqli_fetch_row($queryResult);
