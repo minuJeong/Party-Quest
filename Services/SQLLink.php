@@ -25,16 +25,17 @@ Class SQLLink {
 		mysqli_select_db($DBNAME);
 
 		$query = "SELECT name FROM locationtable;";
-		$dataset = mysqli_query($conn, $query);
+		if ($dataset = mysqli_query($conn, $query)) {
 
-		$datalen = mysqli_affected_rows();
-		$result . "number of " . $datalen . "found.  ";
+			$datalen = mysqli_affected_rows();
+			$result . "number of " . $datalen . "found.  ";
 
-		$name = "";
-		for ($i = 0; $i < $datalen; $i++) {
-			mysqli_data_seek($dataset, $i);
-			$location = mysqli_fetch_array($dataset);
-			$name . $location[name];
+			$name = "";
+			for ($i = 0; $i < $datalen; $i++) {
+				mysqli_data_seek($dataset, $i);
+				$row = mysqli_fetch_row($dataset);
+				$name . $location[name];
+			}
 		}
 
 		return $result . $name . $param;
