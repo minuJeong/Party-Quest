@@ -12,11 +12,15 @@ Class SQLLink {
 
 	public function getResult($param) {
 
+		$result = "";
+
 		$conn = mysqli_connect($HOST, $DBUSER, $DBPASS);
 
 		if (mysqli_connect_errno($conn)) {
 			return "Failed connection to mysql. error: " . mysqli_error();
 		}
+
+		$result . "conncetion successful.  ";
 
 		mysqli_select_db($DBNAME);
 
@@ -24,8 +28,7 @@ Class SQLLink {
 		$dataset = mysqli_query($conn, $query);
 
 		$datalen = mysqli_affected_rows();
-
-		$result = "";
+		$result . "number of " . $datalen . "found.  ";
 
 		for ($i = 0; $i < $datalen; $i++) {
 			mysqli_data_seek($dataset, $i);
