@@ -14,10 +14,8 @@ Class SQLLink {
 	public function getResult($param) {
 
 		$conn = mysqli_connect($HOST, $DBUSER, $DBPASS, $DBNAME);
-
-		$QUERY = "SELECT * FROM locationtable";
-
-		$result = mysqli_query($QUERY);
+		$query = "SELECT * FROM locationtable";
+		$result = mysqli_query($query);
 		return $result;
 	}
 
