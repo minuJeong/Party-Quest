@@ -21,7 +21,7 @@ Class SQLLink {
 		mysqli_select_db($DBNAME);
 
 		$query = "SELECT * FROM locationtable;";
-		$result = mysqli_query($query);
+		$result = mysqli_query($conn, $query);
 
 		return $result . $param;
 	}
