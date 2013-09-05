@@ -26,8 +26,8 @@ $row = mysqli_fetch_row($queryResult);
 
 echo $row[0] . '
 ';
-echo $row[1] . '
-';
+
+echo '123123123123123123123';
 
 echo '
 end point
