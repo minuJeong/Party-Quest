@@ -2,7 +2,7 @@
 Class TestClass {
 	public function testMethod($param) {
 
-		$HOST = "localhost:3306";
+		$HOST = "localhost";
 		$DBNAME = "LocationData";
 		$DBUSER = "root";
 		$DBPASS = "A8057silent";
