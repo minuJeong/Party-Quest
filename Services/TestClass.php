@@ -7,8 +7,7 @@ Class TestClass {
 		$DBUSER = "root";
 		$DBPASS = "A8057silent";
 
-		$conn = mysqli_connect("$HOST", "$DBUSER", "$DBPASS");
-		mysqli_select_db("$DBNAME", $conn);
+		$conn = mysqli_connect($HOST, $DBUSER, $DBPASS, $DBNAME);
 
 		$QUERY = "SELECT * FROM locationtable";
 

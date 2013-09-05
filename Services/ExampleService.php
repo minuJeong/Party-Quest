@@ -9,7 +9,6 @@
  * @package Amfphp_Services
  */
 
-
 /**
  * This is a test/example service. Remove it for production use
  *
@@ -18,15 +17,14 @@
  */
 class ExampleService {
 
-    /**
-     * return the same data as what was sent
-     * @param mixed $param
-     * @return mixed
-     */
-    public function returnOneParam($param){
-        return $param;
-    }
-
+	/**
+	 * return the same data as what was sent
+	 * @param mixed $param
+	 * @return mixed
+	 */
+	public function returnOneParam($param) {
+		return $param;
+	}
 
 }
 ?>
