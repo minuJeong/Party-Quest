@@ -30,13 +30,14 @@ Class SQLLink {
 		$datalen = mysqli_affected_rows();
 		$result . "number of " . $datalen . "found.  ";
 
+		$name = "";
 		for ($i = 0; $i < $datalen; $i++) {
 			mysqli_data_seek($dataset, $i);
 			$location = mysqli_fetch_array($dataset);
-			$result . $location[name];
+			$name . $location[name];
 		}
 
-		return $result . $param;
+		return $result . $name . $param;
 	}
 
 }
