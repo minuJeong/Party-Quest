@@ -23,4 +23,5 @@ $gateway = Amfphp_Core_HttpRequestGatewayFactory::createGateway();
 //chdir(dirname(__FILE__) . '/Services');
 $gateway -> service();
 $gateway -> output();
+
 ?>
