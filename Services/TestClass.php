@@ -1,6 +1,6 @@
 <?php
 Class TestClass {
-	public function testMethod() {
+	public function testMethod($param) {
 
 		$HOST = "localhost:3306";
 		$DBNAME = "LocationData";
@@ -13,6 +13,8 @@ Class TestClass {
 		$QUERY = "SELECT * FROM locationtable";
 
 		$result = mysqli_query($QUERY);
+
+		$result = $result . $param;
 		return $result;
 	}
 
