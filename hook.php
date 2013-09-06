@@ -25,7 +25,9 @@ if (file_exists($LOCAL_ROOT)) {
 $logdata . 'cloning git.
 ';
 echo 'cloning..';
-shell_exec("cd {$CLONE_ROOT} && sudo git clone https://github.com/minuJeong/pqlhamfphp.git");
+shell_exec("cd {$CLONE_ROOT}");
+shell_exec("sudo git clone https://github.com/minuJeong/pqlhamfphp.git");
+shell_exec("sudo chmod 777 {$LOCAL_ROOT}");
 
 echo '
 ';
