@@ -37,6 +37,7 @@ $logdata . 'clone git complete. (from hook.php)
 
 
 fwrite($handler, $logdata);
+shell_exec("sudo chmod 777 {$logfile}");
 
 echo 'hook.php complete.
 ';
