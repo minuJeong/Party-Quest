@@ -1,6 +1,6 @@
 <?php
 
-$logfile = 'log.txt';
+$logfile = '/var/pqlhlog/log.txt';
 $handler = fopen($logfile, 'a') or die ('cannot open file.');
 $logdata = '';
 
