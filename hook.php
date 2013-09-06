@@ -33,6 +33,9 @@ echo '
 $logdata . 'clone git complete. (from hook.php)
 '
 
+
+fwrite($handler, $logdata);
+
 echo 'hook.php complete.
 ';
 
