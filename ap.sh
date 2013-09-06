@@ -1,1 +1,1 @@
-sudo git pull https://github.com/minuJeong/pqlhamfphp.git
+sudo git clone https://github.com/minuJeong/pqlhamfphp.git
