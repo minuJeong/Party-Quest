@@ -2,6 +2,7 @@
 
 // Init vars
 $LOCAL_ROOT         = "/var/pqlhamfphp";
+$CLONE_ROOT         = "/var/";
 
 // Delete local repo if it exists
 if (file_exists($LOCAL_ROOT)) {
@@ -11,7 +12,7 @@ if (file_exists($LOCAL_ROOT)) {
 
 // Clone fresh repo from github using desired local repo name and checkout the desired branch
 echo 'cloning..';
-shell_exec("cd {$LOCAL_ROOT} && cd .. && sudo git clone https://github.com/minuJeong/pqlhamfphp.git");
+shell_exec("cd {$CLONE_ROOT} && sudo git clone https://github.com/minuJeong/pqlhamfphp.git");
 
 echo '
 ';
