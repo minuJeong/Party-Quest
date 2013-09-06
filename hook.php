@@ -33,7 +33,7 @@ echo '
 ';
 
 $logdata . 'clone git complete. (from hook.php)
-'
+';
 
 
 fwrite($handler, $logdata);
