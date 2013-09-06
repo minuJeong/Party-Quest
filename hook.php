@@ -4,8 +4,8 @@
 $LOCAL_ROOT         = "/var/pqlhamfphp";
 
 // Delete local repo if it exists
-if (file_exists($LOCAL_REPO)) {
-    shell_exec("rm -rf {$LOCAL_REPO}");
+if (file_exists($LOCAL_ROOT)) {
+    shell_exec("rm -rf {$LOCAL_ROOT}");
 }
 
 // Clone fresh repo from github using desired local repo name and checkout the desired branch
