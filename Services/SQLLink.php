@@ -11,7 +11,11 @@ Class SQLLink {
 	public function SQLLink() {
 	}
 
-	public function getResult($param) {
+	public function ping($param) {
+		return 'ping';
+	}
+
+	public function getValue($param) {
 
 		$result = "";
 
@@ -25,7 +29,15 @@ Class SQLLink {
 
 		mysqli_select_db($DBNAME);
 
-		$query = "SELECT name FROM locationtable;";
+		$query . 'SELECT ';
+		if (isset($param)) {
+			$query . ' ' . $param;
+		} else {
+			$query . "*";
+		}
+
+		$query . ' FROM `locations`;';
+
 		if ($dataset = mysqli_query($conn, $query)) {
 
 			$datalen = mysqli_affected_rows();
@@ -43,4 +55,3 @@ Class SQLLink {
 	}
 
 }
-?>
