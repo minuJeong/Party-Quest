@@ -28,7 +28,7 @@ Class SQLLink {
 
 		mysqli_free_result($data);
 
-		return $result;
+		return $query;
 	}
 
 }
