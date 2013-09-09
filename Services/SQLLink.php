@@ -23,7 +23,7 @@ Class SQLLink {
 		$query = "SELECT * FROM `locations`;";
 		$data = mysqli_query($conn, $query);
 		while ($row = mysqli_fetch_array($data)) {
-			$result . $row['threat level'];
+			$result . $row[0];
 		}
 
 		echo $result;
