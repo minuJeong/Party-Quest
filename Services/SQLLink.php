@@ -35,8 +35,6 @@ Class SQLLink {
 		}
 		mysqli_free_result($result);
 
-		$return = $row[$param];
-
 		return $return;
 	}
 
