@@ -1,10 +1,6 @@
 <?php
 
 echo "SQLLink.php";
-
-$instance = new SQLLink();
-$test = $instance -> getValue($param);
-
 Class SQLLink {
 
 	private static $HOST = "127.0.0.1";
@@ -34,7 +30,7 @@ Class SQLLink {
 		$result = mysqli_query($connection, $query);
 		while ($row = mysqli_fetch_array($result)) {
 
-			return $row;
+			$return . $row[0];
 
 		}
 		mysqli_free_result($result);
