@@ -34,7 +34,7 @@ Class SQLLink {
 		$result = mysqli_query($connection, $query);
 		while ($row = mysqli_fetch_array($result)) {
 
-			return $row[0];
+			return $row;
 
 		}
 		mysqli_free_result($result);
