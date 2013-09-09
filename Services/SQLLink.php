@@ -25,7 +25,7 @@ Class SQLLink {
 
 		$query = "SELECT * FROM " . $TABLE;
 		$resultArray = mysqli_query($conn, $query);
-		while ($row = mysqli_fetch_array($resultArray)) {
+		while ($row = mysqli_fetch_array($resultArray, MYSQL_BOTH)) {
 			$return . $row[0];
 		}
 
