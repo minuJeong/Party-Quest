@@ -23,12 +23,12 @@ Class SQLLink {
 		$query = "SELECT * FROM `locations`;";
 		$data = mysqli_query($conn, $query);
 		while ($row = mysqli_fetch_array($data)) {
-			$result . $row[0];
+			$result = $row[0];
 		}
 
-		# mysqli_free_result($data);
+		mysqli_free_result($data);
 
-		return $data;
+		return $result;
 	}
 
 }
