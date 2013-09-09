@@ -4,7 +4,7 @@
 $CLONE_ROOT         = "/var/";
 
 // Delete local repo if it exists
-if (file_exists($LOCAL_ROOT)) {
+if (file_exists($CLONE_ROOT . '/pq')) {
     echo 'root exists. removing..';
     shell_exec("sudo rm -rf {$CLONE_ROOT}/pq");
 }
