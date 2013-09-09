@@ -20,15 +20,15 @@ Class SQLLink {
 
 		$return = 'hello. init return';
 
-		$mysqli = new mysqli($HOST, $DBUSER, $DBPASS, $DBNAME);
+		$connection = mysqli_connect($HOST, $DBUSER, $DBPASS, $DBNAME);
 		if (mysqli_connect_error()) {
 			return 'connection error.';
 		}
 
 		$query = "SELECT * FROM " . $TABLE;
-		$result = $mysqli -> query($query);
-		$row = $result -> fetch_array(MYSQLI_ASSOC);
-		$result -> free();
+		$result = mysqli_query($connection, $query);
+		$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+		mysqli_free_result($result);
 
 		$return = $row[$param];
 
