@@ -27,7 +27,16 @@ Class SQLLink {
 
 		$query = "SELECT * FROM " . $TABLE;
 		$result = mysqli_query($connection, $query);
-		$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+		while ($row = $result -> fetch_array()) {
+
+			$return . $row[0] . '
+			';
+			$return . $row[1] . '
+			';
+			$return . $row[2] . '
+			';
+
+		}
 		mysqli_free_result($result);
 
 		$return = $row[$param];
