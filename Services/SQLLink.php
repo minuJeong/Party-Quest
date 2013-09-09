@@ -7,6 +7,7 @@ Class SQLLink {
 	private static $DBPASS = "A8057silent";
 
 	private $DBNAME = "LocationData";
+	private $TABLE = "locations";
 
 	public function SQLLink() {
 	}
@@ -16,21 +17,22 @@ Class SQLLink {
 	}
 
 	public function getValue($param) {
-		
-		$result = 'hello. init result';
 
-		$conn = mysqli_connect($HOST, $DBUSER, $DBPASS);
-		mysqli_select_db($DBNAME);
+		$return = 'hello. init return';
 
-		$query = "SELECT * FROM `locations`;";
-		$data = mysqli_query($conn, $query);
-		while ($row = mysqli_fetch_array($data)) {
-			$result = $row[0];
+		$mysqli = new mysqli($HOST, $DBUSER, $DBPASS, $DBNAME);
+		if (mysqli_connect_error()) {
+			return 'connection error.';
 		}
 
-		mysqli_free_result($data);
+		$query = "SELECT * FROM " . $TABLE;
+		$result = $mysqli -> query($query);
+		$row = $result -> fetch_array(MYSQLI_ASSOC);
+		$result -> free();
 
-		return $result;
+		$return = $row[0];
+
+		return $return;
 	}
 
 }
