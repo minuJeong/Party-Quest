@@ -12,7 +12,7 @@ if (file_exists($CLONE_ROOT . '/pq')) {
 // Clone fresh repo from github using desired local repo name and checkout the desired branch
 echo 'cloning..';
 shell_exec("cd {$CLONE_ROOT}");
-shell_exec("sudo git clone https://github.com/minuJeong/pqlhamfphp.git");
+shell_exec("sudo git clone https://github.com/minuJeong/pq.git");
 shell_exec("sudo chmod 777 {$CLONE_ROOT}/pq");
 
 echo '
