@@ -1,6 +1,5 @@
 <?php
 
-echo "SQLLink.php";
 Class SQLLink {
 
 	private static $HOST = "127.0.0.1";
@@ -19,12 +18,7 @@ Class SQLLink {
 
 	public function getValue($param) {
 
-		$return = 'hello. init return';
-
-		$connection = mysqli_connect($HOST, $DBUSER, $DBPASS, $DBNAME);
-		if (mysqli_connect_error()) {
-			return 'connection error.';
-		}
+		$return = 'hello';
 
 		return $return;
 	}
