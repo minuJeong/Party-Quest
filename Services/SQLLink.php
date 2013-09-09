@@ -1,5 +1,7 @@
 <?php
 
+echo "SQLLink.php";
+
 $instance = new SQLLink();
 $test = $instance -> getValue($param);
 
