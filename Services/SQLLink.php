@@ -30,7 +30,7 @@ Class SQLLink {
 		$row = $result -> fetch_array(MYSQLI_ASSOC);
 		$result -> free();
 
-		$return = $row[0];
+		$return = $row[$param];
 
 		return $return;
 	}
