@@ -16,6 +16,8 @@ Class SQLLink {
 	}
 
 	public function getValue($param) {
+		
+		$result = 'hello. init result';
 
 		$conn = mysqli_connect($HOST, $DBUSER, $DBPASS);
 		mysqli_select_db($DBNAME);
