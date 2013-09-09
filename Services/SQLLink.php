@@ -26,7 +26,7 @@ Class SQLLink {
 			$result . $row[0];
 		}
 
-		echo $result;
+		mysqli_free_result($data);
 
 		return $result;
 	}
