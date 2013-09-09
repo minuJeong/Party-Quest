@@ -17,17 +17,16 @@ Class SQLLink {
 
 	public function getValue($param) {
 
-		$result = "";
-
 		$conn = mysqli_connect($HOST, $DBUSER, $DBPASS);
 		mysqli_select_db($DBNAME);
 
 		$query = "SELECT * FROM locations;";
 		$data = mysqli_query($conn, $query);
 		while ($row = mysqli_fetch_array($data)) {
-			$result . $row[0] . "&nbsp" . $row[1] . "<br>";
 			$result . $row['threat level'];
 		}
+
+		echo $result;
 
 		return $result;
 	}
