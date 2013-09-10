@@ -7,7 +7,10 @@ Class SQLLink {
 	private static $DBPASS = "A8057silent";
 	private static $DBNAME = "LocationData";
 
-	public function SQLLink() {
+	public function __construct() {
+
+		$conn = mysqli_connect($HOST, $DBUSER, $DBPASS, $DBNAME);
+
 	}
 
 	public function ping($param) {
@@ -15,11 +18,6 @@ Class SQLLink {
 	}
 
 	public function getValue($param) {
-
-		$conn = mysqli_connect($HOST, $DBUSER, $DBPASS, $DBNAME);
-		if (mysqli_connect_error()) {
-			return "connection error occurred.";
-		}
 
 		$query = "SELECT * FROM locations;";
 		$resultArray = mysqli_query($conn, $query);
