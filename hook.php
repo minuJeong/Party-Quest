@@ -16,9 +16,9 @@ echo 'cd ~~..
 ';
 shell_exec("cd {$CLONE_ROOT}");
 
-echo 'git clone ~~
+echo '. a
 ';
-shell_exec("sudo git clone https://github.com/minuJeong/pq.git");
+shell_exec(". a");
 
 echo 'chmod.
 ';
