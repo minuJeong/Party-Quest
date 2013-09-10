@@ -19,7 +19,13 @@ Class SQLLink {
 
 	public function getValue($param) {
 
-		return sprintf(mysqli_query($conn, "SELECT * FROM locations;"));
+		$data = mysqli_query($conn, "SELECT * FROM locations;");
+
+		while ($row = mysqli_fetch_array($data)) {
+			$ret[] = $row;
+		}
+
+		return $ret;
 
 	}
 
