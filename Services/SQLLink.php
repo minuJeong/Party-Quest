@@ -7,8 +7,6 @@ Class SQLLink {
 	private static $DBPASS = "A8057silent";
 	private static $DBNAME = "LocationData";
 
-	private $TABLE = "locations";
-
 	public function SQLLink() {
 	}
 
@@ -23,11 +21,11 @@ Class SQLLink {
 			return "connection error occurred.";
 		}
 
-		$query = "SELECT * FROM " . $TABLE;
+		$query = "SELECT * FROM locations;";
 		$resultArray = mysqli_query($conn, $query);
 
 		while ($row = mysqli_fetch_array($resultArray)) {
-			return $row['name'];
+			return $row[1];
 		}
 
 		return $return;
