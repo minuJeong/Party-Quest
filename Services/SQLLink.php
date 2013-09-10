@@ -20,6 +20,8 @@ Class SQLLink {
 	public function getValue($param) {
 
 		$data = mysqli_query($conn, "SELECT * FROM locations;");
+		
+		return mysqli_affected_rows();
 
 		while ($row = mysqli_fetch_array($data)) {
 			$ret[] = $row;
