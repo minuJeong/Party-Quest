@@ -21,7 +21,7 @@ Class SQLLink {
 
 		$data = mysqli_query($conn, "SELECT * FROM locations;");
 		
-		return [mysqli_affected_rows()];
+		return mysqli_affected_rows();
 
 		while ($row = mysqli_fetch_array($data)) {
 			$ret[] = $row;
