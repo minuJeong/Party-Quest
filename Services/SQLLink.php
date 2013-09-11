@@ -23,12 +23,12 @@ Class SQLLink {
 		$query = 'SELECT * FROM locations';
 
 		if ($param) {
-			$query .= ' WHERE `name` = ' . $param . ';';
+			$query .= ' WHERE `name` = ' . $param;
 		}
 
-		$data = mysqli_query($query);
+		$query .= ';';
 
-		mysqli_free_result($data);
+		$data = mysqli_query($query);
 
 		$locations = '';
 
@@ -41,6 +41,8 @@ Class SQLLink {
 
 			$locations .= '\n';
 		}
+
+		mysqli_free_result($data);
 
 		return $locations;
 
