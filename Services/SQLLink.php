@@ -1,6 +1,4 @@
 <?php
-echo 'Services/SQLLink.php';
-
 Class SQLLink {
 
 	private static $HOST = "127.0.0.1";
@@ -18,15 +16,21 @@ Class SQLLink {
 
 	public function getValues($param) {
 
+		$locations = array();
+
+		$query = 'SELECT * FROM locations';
 		if ($param) {
-
-			return mysqli_query('SELECT * FROM locations WHERE `name` = ' . $param . ';');
-
+			$query . ' WHERE `name` = ' . $param . ';';
 		} else {
-
-			return mysqli_query('SELECT `name` FROM locations LIMIT 30;');
-
+			$query . ' LIMIT 30;';
 		}
+
+		$data = mysqli_query($query);
+		while ($row = mysqli_fetch_array($data)) {
+			$locations[] = $row;
+		}
+
+		return $locations;
 
 	}
 
