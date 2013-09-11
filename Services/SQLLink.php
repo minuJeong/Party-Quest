@@ -7,9 +7,8 @@ Class SQLLink {
 	private static $DBUSER = "root";
 	private static $DBPASS = "A8057silent";
 
-	public function __construct() {
+	public function SQLLink() {
 		mysqli_connect($HOST, $DBUSER, $DBPASS);
-
 		mysqli_select_db('LocationData');
 	}
 
