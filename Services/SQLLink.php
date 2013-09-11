@@ -30,7 +30,7 @@ Class SQLLink {
 			$locations[] = $row;
 		}
 
-		return $locations;
+		return $locations[1]['name'];
 
 	}
 
