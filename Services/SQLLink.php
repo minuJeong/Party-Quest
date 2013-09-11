@@ -8,29 +8,26 @@ Class SQLLink {
 	private static $DBPASS = "A8057silent";
 
 	public function __construct() {
+		mysqli_connect($HOST, $DBUSER, $DBPASS);
 
+		mysqli_select_db('LocationData');
 	}
 
 	public function ping($param) {
 		return 'ping';
 	}
 
-	public function getValue($param) {
+	public function getValues($param) {
 
-		$conn = mysqli_connect($HOST, $DBUSER, $DBPASS);
+		if ($param) {
 
-		mysqli_select_db($param);
+			return mysqli_query('SELECT * FROM locations WHERE `name` = ' . $param . ';');
 
-		$data = mysqli_query($conn, "SELECT * FROM locations;");
+		} else {
 
-		$ret = '';
+			return mysqli_query('SELECT `name` FROM locations LIMIT 30;');
 
-		while ($row = mysqli_fetch_array($data)) {
-			$ret . $row['name'] . '<br>';
-			echo $row['name'] . '<br>';
 		}
-
-		return $ret;
 
 	}
 
