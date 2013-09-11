@@ -12,8 +12,9 @@ Class SQLLink {
 
 	public function ping($param) {
 		$ret . 'ping';
-		$ret . '%%blob%%';
+		$ret . ', ';
 		$ret . 'hello amfphp';
+		$ret . '\n';
 		return $ret;
 	}
 
@@ -29,9 +30,9 @@ Class SQLLink {
 		while ($row = mysqli_fetch_array($data)) {
 			foreach ($row as $datablob) {
 				$locations . $datablob;
-				$locations . '%%blob%%';
+				$locations . ', ';
 			}
-			$locations . '%%terminator%%';
+			$locations . '\n';
 		}
 
 		return $locations;
