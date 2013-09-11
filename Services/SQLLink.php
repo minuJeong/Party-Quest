@@ -26,7 +26,13 @@ Class SQLLink {
 		$result = mysqli_query($query);
 		$row = mysqli_fetch_array($result);
 
-		return $row;
+		$ret = '';
+
+		foreach ($row as $key => $val) {
+			$ret .= "{$key} {$val}";
+		}
+
+		return $ret;
 
 	}
 
