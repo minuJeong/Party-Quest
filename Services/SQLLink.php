@@ -11,7 +11,6 @@ Class SQLLink {
 	}
 
 	public function ping($param) {
-		$ret = array();
 		$ret . 'ping';
 		$ret . '%%blob%%';
 		$ret . 'hello amfphp';
