@@ -21,17 +21,21 @@ Class SQLLink {
 	public function getValues($param) {
 
 		$query = 'SELECT * FROM locations';
+
 		if ($param) {
 			$query . ' WHERE `name` = ' . $param . ';';
 		}
 
 		$data = mysqli_query($query);
 		$locations = array();
+
 		while ($row = mysqli_fetch_array($data)) {
+
 			foreach ($row as $datablob) {
 				$locations . $datablob;
 				$locations . ', ';
 			}
+
 			$locations . '\n';
 		}
 
