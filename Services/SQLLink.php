@@ -28,12 +28,14 @@ Class SQLLink {
 
 		$query = 'DESC locations;';
 		$result = mysqli_query($query);
-		$row = mysqli_fetch_array($result);
 
 		$ret = '';
+		while ($row = mysqli_fetch_array($result)) {
 
-		foreach ($row as $key => $val) {
-			$ret .= "{$key} {$val}";
+			foreach ($row as $key => $val) {
+				$ret .= "{$key} {$val}";
+			}
+
 		}
 
 		mysqli_free_result($result);
