@@ -35,3 +35,5 @@ Class SQLLink {
 	}
 
 }
+
+?>
