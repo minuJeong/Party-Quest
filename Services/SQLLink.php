@@ -1,15 +1,13 @@
 <?php
+echo 'Services/SQLLink.php';
 
 Class SQLLink {
 
 	private static $HOST = "127.0.0.1";
 	private static $DBUSER = "root";
 	private static $DBPASS = "A8057silent";
-	private static $DBNAME = "LocationData";
 
 	public function __construct() {
-
-		$this -> conn = mysqli_connect($HOST, $DBUSER, $DBPASS, $DBNAME);
 
 	}
 
@@ -19,7 +17,11 @@ Class SQLLink {
 
 	public function getValue($param) {
 
-		$data = mysqli_query($this -> conn, "SELECT * FROM locations;");
+		$conn = mysqli_connect($HOST, $DBUSER, $DBPASS);
+
+		mysqli_select_db($param);
+
+		$data = mysqli_query($conn, "SELECT * FROM locations;");
 
 		while ($row = mysqli_fetch_array($data)) {
 			$ret[] = $row;
