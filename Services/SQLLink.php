@@ -35,8 +35,7 @@ Class SQLLink {
 		while ($row = mysqli_fetch_array($data)) {
 
 			foreach ($row as $key => $datablob) {
-				$locations .= "{$key} : ";
-				$locations .= $datablob;
+				$locations .= "{$key} : {$datablob}";
 				$locations .= ', ';
 			}
 
