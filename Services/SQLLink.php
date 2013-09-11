@@ -26,6 +26,9 @@ Class SQLLink {
 		}
 
 		$data = mysqli_query($query);
+
+		mysqli_free_result($data);
+
 		$locations = array();
 
 		while ($row = mysqli_fetch_array($data)) {
