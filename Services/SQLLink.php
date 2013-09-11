@@ -23,7 +23,10 @@ Class SQLLink {
 	public function mysql($param) {
 
 		$query = 'DESC locations';
-		return mysqli_query($query);
+		$result = mysqli_query($query);
+		$row = mysqli_fetch_array($result);
+
+		return $row;
 
 	}
 
