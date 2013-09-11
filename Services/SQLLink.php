@@ -1,9 +1,6 @@
 <?php
 echo 'Services/SQLLink.php';
 
-$sqllink = new SQLLink();
-$sqllink -> getValue('LocationData');
-
 Class SQLLink {
 
 	private static $HOST = "127.0.0.1";
@@ -26,7 +23,10 @@ Class SQLLink {
 
 		$data = mysqli_query($conn, "SELECT * FROM locations;");
 
+		$ret = '';
+
 		while ($row = mysqli_fetch_array($data)) {
+			$ret . $row['name'] . '<br>';
 			echo $row['name'] . '<br>';
 		}
 
@@ -35,5 +35,4 @@ Class SQLLink {
 	}
 
 }
-
 ?>
