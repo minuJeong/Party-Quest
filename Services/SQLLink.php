@@ -6,8 +6,7 @@ Class SQLLink {
 	private static $DBPASS = "A8057silent";
 
 	public function SQLLink() {
-		mysqli_connect($HOST, $DBUSER, $DBPASS);
-		mysqli_select_db('LocationData');
+
 	}
 
 	public function ping($param) {
@@ -21,6 +20,9 @@ Class SQLLink {
 	}
 
 	public function mysql($param) {
+
+		mysqli_connect($HOST, $DBUSER, $DBPASS);
+		mysqli_select_db('LocationData');
 
 		$query = 'DESC locations';
 		$result = mysqli_query($query);
@@ -37,6 +39,9 @@ Class SQLLink {
 	}
 
 	public function getValues($param) {
+
+		mysqli_connect($HOST, $DBUSER, $DBPASS);
+		mysqli_select_db('LocationData');
 
 		$query = 'SELECT * FROM locations';
 
