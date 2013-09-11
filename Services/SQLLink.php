@@ -34,7 +34,7 @@ Class SQLLink {
 			$locations . '%%terminator%%';
 		}
 
-		return $locations[1]['name'];
+		return $locations;
 
 	}
 
