@@ -27,7 +27,11 @@ Class SQLLink {
 		$data = mysqli_query($query);
 		$locations = array();
 		while ($row = mysqli_fetch_array($data)) {
-			$locations[] = $row;
+			foreach ($row as $datablob) {
+				$locations . $datablob;
+				$locations . '%%blob%%';
+			}
+			$locations . '%%terminator%%';
 		}
 
 		return $locations[1]['name'];
