@@ -5,9 +5,11 @@ Class SQLLink {
 	private static $DBUSER = "root";
 	private static $DBPASS = "A8057silent";
 
+	private static $conn;
+
 	public function SQLLink() {
 
-		mysqli_connect($HOST, $DBUSER, $DBPASS);
+		$this -> $conn = mysqli_connect($HOST, $DBUSER, $DBPASS);
 		mysqli_select_db('LocationData');
 
 	}
@@ -27,10 +29,10 @@ Class SQLLink {
 	public function mysql($param) {
 
 		$query = 'DESC locations;';
-		$result = mysqli_query($query);
+		$result = mysqli_query($this -> $conn, $query);
 
 		$ret = '';
-		while ($row = mysqli_fetch_array($result)) {
+		while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
 
 			foreach ($row as $key => $val) {
 				$ret .= "{$key} {$val}";
@@ -51,12 +53,13 @@ Class SQLLink {
 		if ($param) {
 			$query .= ' WHERE `name` = ' . $param;
 		}
+		$query .= ';';
 
-		$data = mysqli_query($query);
+		$data = mysqli_query($this -> $conn, $query);
 
 		$locations = '';
 
-		while ($row = mysqli_fetch_array($data)) {
+		while ($row = mysqli_fetch_array($data, MYSQL_ASSOC)) {
 
 			foreach ($row as $key => $datablob) {
 				$locations .= "{$key} : {$datablob} , ";
