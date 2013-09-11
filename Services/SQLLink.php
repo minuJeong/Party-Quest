@@ -19,8 +19,6 @@ Class SQLLink {
 		$query = 'SELECT * FROM locations';
 		if ($param) {
 			$query . ' WHERE `name` = ' . $param . ';';
-		} else {
-			$query . ' LIMIT 30;';
 		}
 
 		$data = mysqli_query($query);
