@@ -11,10 +11,12 @@ Class SQLLink {
 	}
 
 	public function ping($param) {
+		$arr = array(1 => 'ping', 2 => 'hello world', 3 => 'omgomgomg');
+
 		$ret = '';
-		$ret .= 'ping';
-		$ret .= ', ';
-		$ret .= 'hello amfphp';
+		foreach ($arr as $key => $val) {
+			$ret .= "{$key} : {$val}, ";
+		}
 		return $ret;
 	}
 
