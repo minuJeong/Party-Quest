@@ -30,7 +30,7 @@ Class SQLLink {
 
 		mysqli_free_result($data);
 
-		$locations = array();
+		$locations = '';
 
 		while ($row = mysqli_fetch_array($data)) {
 
