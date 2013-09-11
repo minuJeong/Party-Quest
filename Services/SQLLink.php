@@ -11,12 +11,10 @@ Class SQLLink {
 	}
 
 	public function ping($param) {
-		return 'ping';
+		return ['ping'];
 	}
 
 	public function getValues($param) {
-
-		$locations = array();
 
 		$query = 'SELECT * FROM locations';
 		if ($param) {
@@ -26,6 +24,7 @@ Class SQLLink {
 		}
 
 		$data = mysqli_query($query);
+		$locations = array();
 		while ($row = mysqli_fetch_array($data)) {
 			$locations[] = $row;
 		}
