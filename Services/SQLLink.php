@@ -12,7 +12,7 @@ Class SQLLink {
 
 	public function ping($param) {
 		$ret = array();
-		$ret[] = 'ping'
+		$ret[] = 'ping';
 		return $ret;
 	}
 
