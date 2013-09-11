@@ -11,7 +11,9 @@ Class SQLLink {
 	}
 
 	public function ping($param) {
-		return ['ping'];
+		$ret = array();
+		$ret[] = 'ping'
+		return $ret;
 	}
 
 	public function getValues($param) {
