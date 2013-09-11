@@ -12,9 +12,9 @@ Class SQLLink {
 
 	public function ping($param) {
 		$ret = '';
-		$ret . 'ping';
-		$ret . ', ';
-		$ret . 'hello amfphp';
+		$ret .= 'ping';
+		$ret .= ', ';
+		$ret .= 'hello amfphp';
 		return $ret;
 	}
 
@@ -23,7 +23,7 @@ Class SQLLink {
 		$query = 'SELECT * FROM locations';
 
 		if ($param) {
-			$query . ' WHERE `name` = ' . $param . ';';
+			$query .= ' WHERE `name` = ' . $param . ';';
 		}
 
 		$data = mysqli_query($query);
@@ -35,11 +35,11 @@ Class SQLLink {
 		while ($row = mysqli_fetch_array($data)) {
 
 			foreach ($row as $datablob) {
-				$locations . $datablob;
-				$locations . ', ';
+				$locations .= $datablob;
+				$locations .= ', ';
 			}
 
-			$locations . '\n';
+			$locations .= '\n';
 		}
 
 		return $locations;
