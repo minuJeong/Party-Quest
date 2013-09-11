@@ -7,9 +7,13 @@ Class SQLLink {
 
 	public function SQLLink() {
 
+		mysqli_connect($HOST, $DBUSER, $DBPASS);
+		mysqli_select_db('LocationData');
+
 	}
 
 	public function ping($param) {
+
 		$arr = array('name' => 'ping', 'threat level' => 10, 'familiar race' => 'human');
 
 		$ret = '';
@@ -17,14 +21,12 @@ Class SQLLink {
 			$ret .= "{$key}: {$val}, ";
 		}
 		return $ret;
+
 	}
 
 	public function mysql($param) {
 
-		mysqli_connect($HOST, $DBUSER, $DBPASS);
-		mysqli_select_db('LocationData');
-
-		$query = 'DESC locations';
+		$query = 'DESC locations;';
 		$result = mysqli_query($query);
 		$row = mysqli_fetch_array($result);
 
@@ -34,14 +36,13 @@ Class SQLLink {
 			$ret .= "{$key} {$val}";
 		}
 
+		mysqli_free_result($result);
+
 		return $ret;
 
 	}
 
 	public function getValues($param) {
-
-		mysqli_connect($HOST, $DBUSER, $DBPASS);
-		mysqli_select_db('LocationData');
 
 		$query = 'SELECT * FROM locations';
 
@@ -68,4 +69,3 @@ Class SQLLink {
 	}
 
 }
-?>
