@@ -14,7 +14,6 @@ Class SQLLink {
 		$ret . 'ping';
 		$ret . ', ';
 		$ret . 'hello amfphp';
-		$ret . '\n';
 		return $ret;
 	}
 
