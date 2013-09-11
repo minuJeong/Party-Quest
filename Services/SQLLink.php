@@ -20,6 +20,13 @@ Class SQLLink {
 		return $ret;
 	}
 
+	public function mysql($param) {
+
+		$query = 'DESC locations';
+		return mysqli_query($query);
+
+	}
+
 	public function getValues($param) {
 
 		$query = 'SELECT * FROM locations';
@@ -27,8 +34,6 @@ Class SQLLink {
 		if ($param) {
 			$query .= ' WHERE `name` = ' . $param;
 		}
-
-		$query .= ';';
 
 		$data = mysqli_query($query);
 
