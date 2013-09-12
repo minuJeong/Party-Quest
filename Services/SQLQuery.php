@@ -1,7 +1,7 @@
 <?php
 class SQLQuery {
 
-	public $conn;
+	public $mysqli;
 
 	public function SQLQuery() {
 
@@ -9,8 +9,7 @@ class SQLQuery {
 		$sqluser = 'root';
 		$sqlpass = 'A8057silent';
 
-		$this -> conn = mysqli_connect($sqlhost, $sqluser, $sqlpass);
-		mysqli_select_db('LocationData');
+		$this -> mysqli = new mysqli($sqlhost, $sqluser, $sqlpass, "LocationData");
 
 	}
 
@@ -22,11 +21,11 @@ class SQLQuery {
 
 	public function query($query) {
 
-		$result = mysqli_query($this -> conn, $query);
+		$result = $this -> mysqli -> query($query);
 
 		$ret = '';
 
-		while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
+		while ($row = $result -> fetch_array(MYSQL_ASSOC)) {
 
 			foreach ($row as $key => $val) {
 				$ret .= "{$val}, ";
@@ -34,6 +33,8 @@ class SQLQuery {
 			$ret .= '\n';
 
 		}
+
+		$result -> free();
 
 		return $ret;
 
