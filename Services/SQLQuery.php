@@ -24,11 +24,14 @@ class SQLQuery {
 
 		$result = mysqli_query($this -> conn, $query);
 
-		$ret = array();
+		$ret = '';
 
 		while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
 
-			$ret[] = $row;
+			foreach ($row as $key => $val) {
+				$ret .= "{$val}, ";
+			}
+			$ret .= '\n';
 
 		}
 
