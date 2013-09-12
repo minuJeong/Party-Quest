@@ -1,15 +1,15 @@
 <?php
-Class SQLLink {
-
-	private static $HOST = "127.0.0.1";
-	private static $DBUSER = "root";
-	private static $DBPASS = "A8057silent";
+class SQLLink {
 
 	public $conn;
 
 	public function SQLLink() {
 
-		$this -> $conn = mysqli_connect($HOST, $DBUSER, $DBPASS);
+		$sqlhost = SQLLoginData::getHost();
+		$sqluser = SQLLoginData::getId();
+		$sqlpass = SQLLoginData::getPass();
+
+		$this -> $conn = mysqli_connect($sqlhost, $sqluser, $sqlpass);
 		mysqli_select_db('LocationData');
 
 	}
