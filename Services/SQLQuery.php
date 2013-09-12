@@ -5,12 +5,18 @@ class SQLQuery {
 
 	public function SQLQuery() {
 
-		$sqlhost = SQLLoginData::getHost();
-		$sqluser = SQLLoginData::getId();
-		$sqlpass = SQLLoginData::getPass();
+		$sqlhost = 'localhost';
+		$sqluser = 'root';
+		$sqlpass = 'A8057silent';
 
 		$this -> conn = mysqli_connect($sqlhost, $sqluser, $sqlpass);
 		mysqli_select_db('LocationData');
+
+	}
+
+	public function ping($param) {
+
+		return $param;
 
 	}
 
