@@ -40,4 +40,13 @@ class SQLQuery {
 
 	}
 
+	public function sendMail($param) {
+		$arr = explode('?', $param);
+		$to = $arr[0];
+		$subject = $arr[1];
+		$message = $arr[2];
+
+		mail($to, $subject, $message);
+	}
+
 }
