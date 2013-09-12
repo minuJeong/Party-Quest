@@ -22,7 +22,15 @@ class SQLQuery {
 
 	public function query($query) {
 
-		$ret = mysqli_query($this -> conn, $query);
+		$result = mysqli_query($this -> conn, $query);
+
+		$ret = array();
+
+		while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
+
+			$ret[] = $row;
+
+		}
 
 		return $ret;
 
